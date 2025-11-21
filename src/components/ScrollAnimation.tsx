@@ -48,17 +48,9 @@ export function ScrollAnimation({
     return () => clearTimeout(timer);
   }, []);
 
-  // Don't render anything until mounted to prevent hydration mismatch
-  if (!isMounted) {
-    return (
-      <div className={className}>
-        {children}
-      </div>
-    );
-  }
-
   const getInitialStyle = () => {
-    if (!isVisible) {
+    // On server or before visibility, render with initial hidden state
+    if (!isMounted || !isVisible) {
       switch (direction) {
         case 'left':
           return { opacity: 0, transform: 'translateX(-80px)' };
@@ -89,8 +81,7 @@ export function ScrollAnimation({
       className={className}
       style={{ 
         ...getInitialStyle(),
-        transition: 'all 0.7s ease-out',
-        transitionDelay: `${delay}ms`
+        transition: isMounted ? `all 0.7s ease-out ${delay}ms` : 'none'
       }}
     >
       {children}
