@@ -49,49 +49,49 @@ export function BuiltForNextSection() {
       }}
       scrollAnimation={{ direction: 'bottom', delay: 0 }}
     >
-      <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
+      <div className="text-center mb-8 sm:mb-12">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6 px-4">
           AGV Token Architecture — Built for{' '}
           <span className="text-blue-400 italic">What Comes Next</span>
         </h2>
         
-        <p className="text-lg sm:text-xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-base sm:text-lg md:text-xl text-white/90 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed px-4">
           Your preGVT automatically transitions to GVT through a secure vesting contract at TGE.
         </p>
       </div>
 
-      <div className="max-w-6xl mx-auto mb-12">
+      <div className="max-w-6xl mx-auto mb-8 sm:mb-12 px-4">
         <Box>
-          <div className="flex flex-col sm:flex-row justify-center gap-6 mb-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-center gap-4 sm:gap-6 mb-4 sm:mb-6">
             {items.slice(0, 4).map((item, index) => {
               const IconComponent = item.icon;
               return (
                 <ScrollAnimation key={index} direction="bottom" delay={index * 100}>
-                  <Box className="flex flex-col items-center justify-center text-center w-48 h-48" padding="md" rounded="xl">
+                  <Box className="flex flex-col items-center justify-center text-center w-full sm:w-40 md:w-48 h-40 sm:h-44 md:h-48" padding="md" rounded="xl">
                     {/* Icon in circular blue bg */}
-                    <div className="w-16 h-16 rounded-full bg-blue-500 flex items-center justify-center mb-3">
-                      <IconComponent className="w-8 h-8 text-white" />
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-blue-500 flex items-center justify-center mb-2 sm:mb-3">
+                      <IconComponent className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" />
                     </div>
                     {/* Text */}
-                    <p className="text-white text-base font-medium">{item.text}</p>
+                    <p className="text-white text-sm sm:text-base font-medium">{item.text}</p>
                   </Box>
                 </ScrollAnimation>
               );
             })}
           </div>
 
-          <div className="flex flex-col sm:flex-row justify-center gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-center gap-4 sm:gap-6">
             {items.slice(4, 7).map((item, index) => {
               const IconComponent = item.icon;
               return (
                 <ScrollAnimation key={index + 4} direction="bottom" delay={(index + 4) * 100}>
-                  <Box className="flex flex-col items-center justify-center text-center w-48 h-48" padding="md" rounded="xl">
+                  <Box className="flex flex-col items-center justify-center text-center w-full sm:w-40 md:w-48 h-40 sm:h-44 md:h-48 mx-auto sm:mx-0" padding="md" rounded="xl">
                     {/* Icon in circular blue bg */}
-                    <div className="w-16 h-16 rounded-full bg-blue-500 flex items-center justify-center mb-3">
-                      <IconComponent className="w-8 h-8 text-white" />
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-blue-500 flex items-center justify-center mb-2 sm:mb-3">
+                      <IconComponent className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" />
                     </div>
                     {/* Text */}
-                    <p className="text-white text-base font-medium">{item.text}</p>
+                    <p className="text-white text-sm sm:text-base font-medium">{item.text}</p>
                   </Box>
                 </ScrollAnimation>
               );

@@ -41,38 +41,38 @@ export function VestingSection() {
       }}
       scrollAnimation={{ direction: 'bottom', delay: 0 }}
     >
-      <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
+      <div className="text-center mb-8 sm:mb-12">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6 px-4">
           From PreGVT to GVT —{' '}
           <span className="text-blue-400 italic">Fully Transparent Vesting</span>
         </h2>
         
-        <p className="text-lg sm:text-xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-base sm:text-lg md:text-xl text-white/90 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed px-4">
           Your preGVT automatically transitions to GVT through a secure vesting contract at TGE.
         </p>
       </div>
 
-      <div className="max-w-6xl mx-auto mb-12">
+      <div className="max-w-6xl mx-auto mb-8 sm:mb-12 px-4">
         <Box padding="md">
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-2">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-2 md:gap-4">
                 {steps.map((step, index) => {
                   const IconComponent = step.icon;
                   return (
-                    <div key={index} className="flex items-center">
+                    <div key={index} className="flex flex-col sm:flex-row items-center">
                       <ScrollAnimation direction="bottom" delay={index * 100}>
                         <div className="flex flex-col items-center text-center">
                           {/* Icon in circular border */}
-                          <div className="w-20 h-20 rounded-full border-4 border-primary flex items-center justify-center mb-4 bg-white/10 backdrop-blur-sm">
-                            <IconComponent className="w-10 h-10 text-white" />
+                          <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-[3px] sm:border-4 border-primary flex items-center justify-center mb-3 sm:mb-4 bg-white/10 backdrop-blur-sm">
+                            <IconComponent className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
                           </div>
                           {/* Text */}
-                          <p className="text-white text-sm font-bold">{step.text}</p>
+                          <p className="text-white text-xs sm:text-sm font-bold max-w-[120px] sm:max-w-none">{step.text}</p>
                         </div>
                       </ScrollAnimation>
                       {/* Arrow between groups (not after last one) */}
                       {index < steps.length - 1 && (
-                        <div className="hidden sm:flex items-center justify-center mx-2 sm:mx-4">
-                          <ArrowRight className="w-8 h-8 text-white/60" strokeWidth={3} />
+                        <div className="hidden sm:flex items-center justify-center mx-2 sm:mx-3 md:mx-4">
+                          <ArrowRight className="w-6 h-6 sm:w-8 sm:h-8 text-white/60" strokeWidth={3} />
                         </div>
                       )}
                     </div>

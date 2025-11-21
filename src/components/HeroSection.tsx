@@ -5,7 +5,7 @@ import { PrimaryButton } from '@/components/ui/PrimaryButton';
 
 export function HeroSection() {
   return (
-    <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-[90vh] flex items-center bg-black">
+    <section className="relative py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-[85vh] sm:min-h-[90vh] flex items-center bg-black">
       <div className="relative z-10 max-w-7xl mx-auto w-full">
         {/* Main Hero Content - Center Aligned */}
         <ScrollAnimation direction="bottom" delay={0}>
@@ -26,21 +26,21 @@ export function HeroSection() {
             </p>
             
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-              <PrimaryButton href="#token-architecture" className="text-lg sm:text-xl px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-6 sm:mb-8">
+              <PrimaryButton href="#token-architecture" className="text-base sm:text-lg md:text-xl px-6 sm:px-8 py-3 sm:py-4 bg-blue-600 hover:bg-blue-700 text-white w-full sm:w-auto">
                 View Token Architecture
               </PrimaryButton>
               <a 
                 href="#" 
-                className="text-lg sm:text-xl px-8 py-4 border-2 border-white text-white hover:bg-white/10 transition-colors rounded-lg"
+                className="text-base sm:text-lg md:text-xl px-6 sm:px-8 py-3 sm:py-4 border-2 border-white text-white hover:bg-white/10 transition-colors rounded-lg w-full sm:w-auto text-center"
               >
                 Read Tokenomics
               </a>
             </div>
             
             {/* Small Image */}
-            <div className="mb-8 flex justify-center">
-              <img src="/token_architecture.png" alt="Token Architecture" className="max-w-md w-full h-auto" />
+            <div className="mb-6 sm:mb-8 flex justify-center px-2">
+              <img src="/token_architecture.png" alt="Token Architecture" className="max-w-full sm:max-w-md w-full h-auto" />
             </div>
             
             {/* White Horizontal Line */}
