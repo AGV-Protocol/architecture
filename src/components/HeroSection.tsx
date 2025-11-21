@@ -27,7 +27,7 @@ export function HeroSection() {
             
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-              <PrimaryButton href="#" className="text-lg sm:text-xl px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white">
+              <PrimaryButton href="#token-architecture" className="text-lg sm:text-xl px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white">
                 View Token Architecture
               </PrimaryButton>
               <a 

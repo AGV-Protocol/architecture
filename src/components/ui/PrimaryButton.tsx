@@ -25,6 +25,17 @@ export function PrimaryButton({
 
   const classes = `${baseClasses} ${variantClasses} ${className}`.trim();
 
+  const handleHashClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (href?.startsWith('#')) {
+      e.preventDefault();
+      const targetId = href.substring(1);
+      const element = document.getElementById(targetId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  };
+
   if (href) {
     if (external) {
       return (
@@ -38,6 +49,20 @@ export function PrimaryButton({
         </a>
       );
     }
+    
+    // Handle hash links with smooth scrolling
+    if (href.startsWith('#')) {
+      return (
+        <a
+          href={href}
+          onClick={handleHashClick}
+          className={classes}
+        >
+          {children}
+        </a>
+      );
+    }
+    
     return (
       <Link href={href} className={classes}>
         {children}

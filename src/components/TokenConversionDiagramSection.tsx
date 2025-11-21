@@ -7,6 +7,7 @@ import { ArrowRight } from 'lucide-react';
 export function TokenConversionDiagramSection() {
   return (
     <SectionWrapper
+      id="token-architecture"
       glowEffect={{
         top: '25%',
         right: '12%',

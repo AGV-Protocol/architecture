@@ -7,6 +7,7 @@ import { GlowEffect } from './GlowEffect';
 interface SectionWrapperProps {
   children: ReactNode;
   className?: string;
+  id?: string;
   glowEffect?: {
     top?: string;
     right?: string;
@@ -27,11 +28,12 @@ interface SectionWrapperProps {
 export function SectionWrapper({
   children,
   className = '',
+  id,
   glowEffect,
   scrollAnimation
 }: SectionWrapperProps) {
   return (
-    <section className={`py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-black ${className}`}>
+    <section id={id} className={`py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-black ${className}`}>
       {glowEffect && (
         <GlowEffect
           top={glowEffect.top}
