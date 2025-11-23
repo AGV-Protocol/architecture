@@ -14,7 +14,7 @@ export function HeroSection() {
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
               AGV Token Architecture
               <br />
-              <span className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-normal text-white/90">
+              <span>
                 Token System Built for the Future
               </span>
             </h1>
