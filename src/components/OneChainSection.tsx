@@ -30,42 +30,44 @@ export function OneChainSection() {
         </div>
         
         <div className="flex flex-col items-center gap-4 sm:gap-6 mb-8 sm:mb-12 max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-center gap-4 sm:gap-6 w-full">
-            <Box className="w-full max-w-[270px] mx-auto sm:max-w-none min-h-[180px] sm:min-h-[200px] flex flex-col justify-center" padding="md">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center p-3 sm:p-4 justify-center text-white font-bold text-base sm:text-lg mx-auto mb-3 sm:mb-4 bg-primary">
-                <img src="/icons/thunder.svg" alt="Single Chain" className="w-10 h-10 sm:w-12 sm:h-12" />
+          {/* Top row - 3 boxes */}
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 justify-center gap-3 sm:gap-6 w-full">
+            <Box className="w-full min-h-[140px] sm:min-h-[200px] flex flex-col justify-center" padding="sm">
+              <div className="w-8 h-8 sm:w-12 sm:h-12 rounded-full flex items-center p-2 sm:p-4 justify-center text-white font-bold text-base sm:text-lg mx-auto mb-2 sm:mb-4 bg-primary">
+                <img src="/icons/thunder.svg" alt="Single Chain" className="w-8 h-8 sm:w-12 sm:h-12" />
               </div>
-              <h4 className="text-white font-semibold mb-2 text-center text-sm sm:text-base">Fast Execution</h4>
+              <h4 className="text-white font-semibold mb-2 text-center text-xs sm:text-base">Fast Execution</h4>
             </Box>
 
-            <Box className="w-full max-w-[270px] mx-auto sm:max-w-none min-h-[180px] sm:min-h-[200px] flex flex-col justify-center" padding="md">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center p-3 sm:p-4 justify-center text-white font-bold text-base sm:text-lg mx-auto mb-3 sm:mb-4 bg-primary">
-                <img src="/icons/stamp.svg" alt="No Bridges" className="w-5 h-5 sm:w-6 sm:h-6" />
+            <Box className="w-full min-h-[140px] sm:min-h-[200px] flex flex-col justify-center" padding="sm">
+              <div className="w-8 h-8 sm:w-12 sm:h-12 rounded-full flex items-center p-2 sm:p-4 justify-center text-white font-bold text-base sm:text-lg mx-auto mb-2 sm:mb-4 bg-primary">
+                <img src="/icons/stamp.svg" alt="No Bridges" className="w-8 h-8 sm:w-12 sm:h-12" />
               </div>
-              <h4 className="text-white font-semibold mb-2 text-center text-sm sm:text-base">Lowest Audit Complexity</h4>
+              <h4 className="text-white font-semibold mb-2 text-center text-xs sm:text-base">Lowest Audit Complexity</h4>
             </Box>
 
-            <Box className="w-full max-w-[270px] mx-auto sm:max-w-none min-h-[180px] sm:min-h-[200px] flex flex-col justify-center" padding="md">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center p-3 sm:p-4 justify-center text-white font-bold text-base sm:text-lg mx-auto mb-3 sm:mb-4 bg-primary">
-                <img src="/icons/spring.svg" alt="Clean Listing" className="w-20 h-20 sm:w-24 sm:h-24" width={48} height={48} />
+            <Box className="w-full min-h-[140px] sm:min-h-[200px] flex flex-col justify-center col-span-2 sm:col-span-1 lg:col-span-1" padding="sm">
+              <div className="w-8 h-8 sm:w-12 sm:h-12 rounded-full flex items-center p-2 sm:p-4 justify-center text-white font-bold text-base sm:text-lg mx-auto mb-2 sm:mb-4 bg-primary">
+                <img src="/icons/spring.svg" alt="Clean Listing" className="w-8 h-8 sm:w-12 sm:h-12" />
               </div>
-              <h4 className="text-white font-semibold mb-2 text-center text-sm sm:text-base">Cleanest listing pathway</h4>
+              <h4 className="text-white font-semibold mb-2 text-center text-xs sm:text-base">Cleanest listing pathway</h4>
             </Box>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-center gap-4 sm:gap-6 w-full">
-            <Box className="w-full max-w-[270px] mx-auto sm:max-w-none min-h-[180px] sm:min-h-[200px] flex flex-col justify-center" padding="md">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center p-3 sm:p-4 justify-center text-white font-bold text-base sm:text-lg mx-auto mb-3 sm:mb-4 bg-primary">
-                <img src="/icons/checked.svg" alt="Easy On-chain Supply Verification" className="w-10 h-10 sm:w-12 sm:h-12" />
+          {/* Bottom row - 2 boxes centered side by side */}
+          <div className="grid grid-cols-2 justify-center gap-3 sm:gap-6 w-full max-w-2xl mx-auto">
+            <Box className="w-full min-h-[140px] sm:min-h-[200px] flex flex-col justify-center" padding="sm">
+              <div className="w-8 h-8 sm:w-12 sm:h-12 rounded-full flex items-center p-2 sm:p-4 justify-center text-white font-bold text-base sm:text-lg mx-auto mb-2 sm:mb-4 bg-primary">
+                <img src="/icons/checked.svg" alt="Easy On-chain Supply Verification" className="w-8 h-8 sm:w-12 sm:h-12" />
               </div>
-              <h4 className="text-white font-semibold mb-2 text-center text-sm sm:text-base">Easy on-chain supply verification</h4>
+              <h4 className="text-white font-semibold mb-2 text-center text-xs sm:text-base">Easy on-chain supply verification</h4>
             </Box>
 
-            <Box className="w-full max-w-[270px] mx-auto sm:max-w-none min-h-[180px] sm:min-h-[200px] flex flex-col justify-center" padding="md">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center p-3 sm:p-4 justify-center text-white font-bold text-base sm:text-lg mx-auto mb-3 sm:mb-4 bg-primary">
-                <img src="/icons/brick.svg" alt="Clean Economics" className="w-10 h-10 sm:w-12 sm:h-12" />
+            <Box className="w-full min-h-[140px] sm:min-h-[200px] flex flex-col justify-center" padding="sm">
+              <div className="w-8 h-8 sm:w-12 sm:h-12 rounded-full flex items-center p-2 sm:p-4 justify-center text-white font-bold text-base sm:text-lg mx-auto mb-2 sm:mb-4 bg-primary">
+                <img src="/icons/brick.svg" alt="Clean Economics" className="w-8 h-8 sm:w-12 sm:h-12" />
               </div>
-              <h4 className="text-white font-semibold mb-2 text-center text-sm sm:text-base">Minimal, predictable architecture</h4>
+              <h4 className="text-white font-semibold mb-2 text-center text-xs sm:text-base">Minimal, predictable architecture</h4>
             </Box>
           </div>
         </div>

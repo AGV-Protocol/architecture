@@ -63,14 +63,14 @@ export function SecuritySection() {
 
         {/* Text positions around the image with connecting lines */}
         {/* Top Left - text1 */}
-        <div className="absolute top-8 left-0 max-w-[220px]">
+        <div className="absolute top-16 left-0 max-w-[220px]">
           <div className="relative">
             <p className="text-white text-sm md:text-base font-bold text-right mb-2">Safe Multisig controls all minting</p>
           </div>
         </div>
 
         {/* Top Right - text2 */}
-        <div className="absolute top-8 right-0 max-w-[220px]">
+        <div className="absolute top-16 right-0 max-w-[220px]">
           <div className="relative">
             <p className="text-white text-sm md:text-base font-bold text-left mb-2">
               One chain = smaller attack surface</p>
@@ -78,7 +78,7 @@ export function SecuritySection() {
         </div>
 
         {/* Bottom Left - text3 */}
-        <div className="absolute bottom-12 left-0 max-w-[220px]">
+        <div className="absolute bottom-32 left-0 max-w-[220px]">
           <div className="relative">
             <p className="text-white text-sm md:text-base font-bold text-right mt-2">
               Escrow-based vesting enforcement
@@ -87,28 +87,28 @@ export function SecuritySection() {
         </div>
 
         {/* Bottom Right - text4 */}
-        <div className="absolute bottom-12 right-0 max-w-[220px]">
+        <div className="absolute bottom-32 right-0 max-w-[220px]">
           <div className="relative">
             <p className="text-white text-sm md:text-base font-bold text-left mt-2">Non-upgradable contracts for stability</p>
           </div>
         </div>
 
         {/* Bottom Center Left - text5 */}
-        <div className="absolute bottom-[-30px] left-1/3 max-w-[200px] transform -translate-x-1/2">
+        <div className="absolute bottom-[-90px] left-1/3 max-w-[200px] transform -translate-x-1/2">
           <div className="relative">
             <p className="text-white text-sm md:text-base font-bold text-right mt-2">Pausable emergency functions</p>
           </div>
         </div>
 
         {/* Bottom Center Right - text6 */}
-        <div className="absolute bottom-[-30px] right-1/3 max-w-[200px] transform translate-x-1/2">
+        <div className="absolute bottom-[-90px] right-1/3 max-w-[200px] transform translate-x-1/2">
           <div className="relative">
             <p className="text-white text-sm md:text-base font-bold text-left mt-2">Optional timelock governance</p>
           </div>
         </div>
       </div>
           
-      <div className="w-full max-w-4xl mx-auto border-t border-white"></div>
+      <div className="w-full max-w-4xl mx-auto border-t border-white mt-[10pc]"></div>
     </SectionWrapper>
   );
 }

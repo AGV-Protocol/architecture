@@ -3,7 +3,7 @@
 import { ScrollAnimation } from '@/components/ScrollAnimation';
 import { SectionWrapper } from '@/components/ui/SectionWrapper';
 import { Box } from '@/components/ui/Box';
-import { Coins, Lock, Calendar, LockOpen, Wallet, ArrowRight } from 'lucide-react';
+import { Coins, Lock, Calendar, LockOpen, Wallet, ArrowRight, ArrowDown } from 'lucide-react';
 
 export function VestingSection() {
   const steps = [
@@ -17,7 +17,7 @@ export function VestingSection() {
     },
     {
       icon: Calendar,
-      text: 'Vesting duration: 9–12 months'
+      text: 'Vesting duration: \n \n 9-12 months'
     },
     {
       icon: LockOpen,
@@ -53,7 +53,7 @@ export function VestingSection() {
       </div>
 
       <div className="max-w-6xl mx-auto mb-8 sm:mb-12 px-4">
-        <Box padding="md">
+        <Box padding="md" className="hidden sm:block">
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-2 md:gap-4">
                 {steps.map((step, index) => {
                   const IconComponent = step.icon;
@@ -80,6 +80,33 @@ export function VestingSection() {
                 })}
               </div>
         </Box>
+        <div className="sm:hidden">
+          <div className="flex flex-col items-center gap-4">
+            {steps.map((step, index) => {
+              const IconComponent = step.icon;
+              return (
+                <div key={index} className="flex flex-col items-center w-full">
+                  <ScrollAnimation direction="bottom" delay={index * 100}>
+                    <div className="flex flex-col items-center text-center w-full">
+                      {/* Icon in circular border */}
+                      <div className="w-14 h-14 rounded-full border-[3px] border-primary flex items-center justify-center mb-2 bg-white/10 backdrop-blur-sm">
+                        <IconComponent className="w-7 h-7 text-white" />
+                      </div>
+                      {/* Text */}
+                      <p className="text-white text-xs font-bold px-2 whitespace-pre-line">{step.text}</p>
+                    </div>
+                  </ScrollAnimation>
+                  {/* Downward arrow between steps (not after last one) */}
+                  {index < steps.length - 1 && (
+                    <div className="flex items-center justify-center my-2">
+                      <ArrowDown className="w-5 h-5 text-white/60" strokeWidth={3} />
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </div>
       
       <div className="w-full max-w-4xl mx-auto border-t border-white"></div>
