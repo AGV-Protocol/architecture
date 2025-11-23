@@ -154,6 +154,15 @@ body {
   }
 }
 
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
 .animate-glow {
   animation: glow 2s ease-in-out infinite;
 }
@@ -208,6 +217,10 @@ body {
 
 .animate-move-arrow {
   animation: moveArrow 2s ease-in-out infinite;
+}
+
+.animate-pulse {
+  animation: pulse 2s ease-in-out infinite;
 }
 
 

@@ -56,7 +56,7 @@ export function TwoTokenArchitectureSection() {
           </Box>
           
           <div className="flex justify-center lg:justify-end items-stretch px-4 lg:px-0">
-            <img src="/pregvt.png" alt="PreGVT" className="max-w-full sm:max-w-md w-full h-auto object-contain rounded-lg" />
+            <img src="/pregvt.png" alt="PreGVT" className="max-w-full sm:max-w-md w-full h-auto object-contain rounded-lg animate-pulse" />
           </div>
         </div>
       </ScrollAnimation>
@@ -64,7 +64,7 @@ export function TwoTokenArchitectureSection() {
       <ScrollAnimation direction="right" delay={400}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-stretch mb-12 sm:mb-16">
           <div className="flex justify-center lg:justify-start order-2 lg:order-1 items-stretch px-4 lg:px-0">
-            <img src="/gvt.png" alt="GVT" className="max-w-full sm:max-w-md w-full h-auto object-contain rounded-lg" />
+            <img src="/gvt.png" alt="GVT" className="max-w-full sm:max-w-md w-full h-auto object-contain rounded-lg animate-pulse" />
           </div>
           
           <Box className="relative order-1 lg:order-2 flex flex-col">
