@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Roboto_Mono } from "next/font/google";
 import "./globals.css";
+import { TranslationProvider } from "@/lib/translation-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,7 +29,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         style={{ backgroundColor: '#000000' }}
       >
-        {children}
+        <TranslationProvider>
+          {children}
+        </TranslationProvider>
       </body>
     </html>
   );

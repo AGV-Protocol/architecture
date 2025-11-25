@@ -5,13 +5,13 @@ import Image from 'next/image';
 import { 
   Github, 
   Twitter, 
-  MapPin, 
   Shield,
   Zap,
   Globe,
   MessageCircle,
   Send
 } from 'lucide-react';
+import { useTranslations } from '@/lib/translation-provider';
 
 interface FooterProps {
   backgroundClass?: string;
@@ -19,30 +19,31 @@ interface FooterProps {
 }
 
 export function Footer({ textColorClass = "text-white" }: FooterProps) {
+  const { t } = useTranslations('footer');
 
   const footerLinks = {
     product: [
-      { name: 'NFT Minting', href: '/mint' },
-      { name: 'KOL Program', href: '/coming-soon' },
-      { name: 'Analytics', href: '/coming-soon' },
+      { name: t('sections.product.links.nftMinting'), href: '/mint' },
+      { name: t('sections.product.links.kolProgram'), href: '/coming-soon' },
+      { name: t('sections.product.links.analytics'), href: '/coming-soon' },
     ],
     company: [
-      { name: 'About Us', href: '/coming-soon' },
-      { name: 'Careers', href: '/coming-soon' },
-      { name: 'Press', href: '/coming-soon' },
-      { name: 'Blogs', href: '/coming-soon' },
+      { name: t('sections.company.links.aboutUs'), href: '/coming-soon' },
+      { name: t('sections.company.links.careers'), href: '/coming-soon' },
+      { name: t('sections.company.links.press'), href: '/coming-soon' },
+      { name: t('sections.company.links.blogs'), href: '/coming-soon' },
     ],
     support: [
-      { name: 'Help Center', href: '/coming-soon' },
-      { name: 'Documentation', href: '/coming-soon' },
-      { name: 'API Reference', href: '/coming-soon' },
-      { name: 'Contact Support', href: '/coming-soon' },
+      { name: t('sections.support.links.helpCenter'), href: '/coming-soon' },
+      { name: t('sections.support.links.documentation'), href: '/coming-soon' },
+      { name: t('sections.support.links.apiReference'), href: '/coming-soon' },
+      { name: t('sections.support.links.contactSupport'), href: '/coming-soon' },
     ],
     legal: [
-      { name: 'Privacy Policy', href: '/coming-soon' },
-      { name: 'Terms of Service', href: '/coming-soon' },
-      { name: 'Cookie Policy', href: '/coming-soon' },
-      { name: 'GDPR', href: '/coming-soon' },
+      { name: t('sections.legal.links.privacyPolicy'), href: '/coming-soon' },
+      { name: t('sections.legal.links.termsOfService'), href: '/coming-soon' },
+      { name: t('sections.legal.links.cookiePolicy'), href: '/coming-soon' },
+      { name: t('sections.legal.links.gdpr'), href: '/coming-soon' },
     ],
   };
 
@@ -53,11 +54,11 @@ export function Footer({ textColorClass = "text-white" }: FooterProps) {
     { name: "Telegram", href: "https://t.me/agvprotocol", icon: Send },
   ];
 
-  const features = [
-    { icon: Shield, text: 'Secure' },
-    { icon: Zap, text: 'Fast' },
-    { icon: Globe, text: 'Multichain' },
-  ];
+  const featureIcons = [Shield, Zap, Globe];
+  const features = featureIcons.map((icon, index) => ({
+    icon,
+    text: t(`featureLabels.${index}`)
+  }));
 
   return (
     <footer className="border-t border-white/20 relative overflow-hidden bg-black">
@@ -85,19 +86,19 @@ export function Footer({ textColorClass = "text-white" }: FooterProps) {
               <div className="flex items-center space-x-3">
                 <Image
                   src="/agv-logo.png"
-                  alt="AGV Protocol"
+                  alt={t('brand')}
                   width={40}
                   height={40}
                   className="h-8 w-8 md:h-10 md:w-10"
                 />
                 <div>
-                  <h2 className={`text-lg md:text-xl font-bold ${textColorClass}`}>PreGVT Protocol</h2>
-                  <p className={`text-xs md:text-sm ${textColorClass === 'text-white' ? 'text-white/70' : 'text-muted-foreground'}`}>Digital Token Platform</p>
+                  <h2 className={`text-lg md:text-xl font-bold ${textColorClass}`}>{t('brand')}</h2>
+                  <p className={`text-xs md:text-sm ${textColorClass === 'text-white' ? 'text-white/70' : 'text-muted-foreground'}`}>{t('tagline')}</p>
                 </div>
               </div>
               
               <p className={`text-sm md:text-base max-w-md ${textColorClass === 'text-white' ? 'text-white/80' : 'text-muted-foreground'}`}>
-                The world&apos;s first compliant PreGVT digital token, an innovative financial product based on blockchain technology.
+                {t('description')}
               </p>
               
               {/* Feature Badges */}
@@ -135,7 +136,7 @@ export function Footer({ textColorClass = "text-white" }: FooterProps) {
             {/* Product Links */}
             <ScrollAnimation direction="bottom" delay={200}>
               <div className="space-y-3 md:space-y-4">
-                <h4 className={`font-semibold text-sm md:text-base ${textColorClass}`}>Products</h4>
+                <h4 className={`font-semibold text-sm md:text-base ${textColorClass}`}>{t('sections.product.title')}</h4>
                 <ul className="space-y-2 md:space-y-3">
                   {footerLinks.product.map((link) => (
                     <li key={link.name}>
@@ -154,7 +155,7 @@ export function Footer({ textColorClass = "text-white" }: FooterProps) {
             {/* Company Links */}
             <ScrollAnimation direction="bottom" delay={400}>
               <div className="space-y-3 md:space-y-4">
-                <h4 className={`font-semibold text-sm md:text-base ${textColorClass}`}>Company</h4>
+                <h4 className={`font-semibold text-sm md:text-base ${textColorClass}`}>{t('sections.company.title')}</h4>
                 <ul className="space-y-2 md:space-y-3">
                   {footerLinks.company.map((link) => (
                     <li key={link.name}>
@@ -173,7 +174,7 @@ export function Footer({ textColorClass = "text-white" }: FooterProps) {
             {/* Support Links */}
             <ScrollAnimation direction="bottom" delay={600}>
               <div className="space-y-3 md:space-y-4">
-                <h4 className={`font-semibold text-sm md:text-base ${textColorClass}`}>Support</h4>
+                <h4 className={`font-semibold text-sm md:text-base ${textColorClass}`}>{t('sections.support.title')}</h4>
                 <ul className="space-y-2 md:space-y-3">
                   {footerLinks.support.map((link) => (
                     <li key={link.name}>
@@ -192,7 +193,7 @@ export function Footer({ textColorClass = "text-white" }: FooterProps) {
             {/* Legal Links */}
             <ScrollAnimation direction="bottom" delay={800}>
               <div className="space-y-3 md:space-y-4">
-                <h4 className={`font-semibold text-sm md:text-base ${textColorClass}`}>Legal</h4>
+                <h4 className={`font-semibold text-sm md:text-base ${textColorClass}`}>{t('sections.legal.title')}</h4>
                 <ul className="space-y-2 md:space-y-3">
                   {footerLinks.legal.map((link) => (
                     <li key={link.name}>

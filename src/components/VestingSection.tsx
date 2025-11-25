@@ -4,30 +4,13 @@ import { ScrollAnimation } from '@/components/ScrollAnimation';
 import { SectionWrapper } from '@/components/ui/SectionWrapper';
 import { Box } from '@/components/ui/Box';
 import { Coins, Lock, Calendar, LockOpen, Wallet, ArrowRight, ArrowDown } from 'lucide-react';
+import { useTranslations } from '@/lib/translation-provider';
 
 export function VestingSection() {
-  const steps = [
-    {
-      icon: Coins,
-      text: 'You hold preGVT'
-    },
-    {
-      icon: Lock,
-      text: 'preGVT moves into vesting contract'
-    },
-    {
-      icon: Calendar,
-      text: 'Vesting duration: \n \n 9-12 months'
-    },
-    {
-      icon: LockOpen,
-      text: 'GVT unlocks gradually'
-    },
-    {
-      icon: Wallet,
-      text: 'You receive liquid GVT'
-    }
-  ];
+  const { t } = useTranslations('vesting');
+  const stepIcons = [Coins, Lock, Calendar, LockOpen, Wallet];
+  const stepTexts = Array.from({ length: 5 }, (_, index) => t(`steps.${index}`));
+  const steps = stepIcons.map((icon, index) => ({ icon, text: stepTexts[index] }));
 
   return (
     <SectionWrapper
@@ -43,12 +26,12 @@ export function VestingSection() {
     >
       <div className="text-center mb-8 sm:mb-12">
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6 px-4">
-          From PreGVT to GVT —{' '}
-          <span className="text-blue-400 italic">Fully Transparent Vesting</span>
+          {t('heading.prefix')}{' '}
+          <span className="text-blue-400 italic">{t('heading.highlight')}</span>
         </h2>
         
         <p className="text-base sm:text-lg md:text-xl text-white/90 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed px-4">
-          Your preGVT automatically transitions to GVT through a secure vesting contract at TGE.
+          {t('description')}
         </p>
       </div>
 

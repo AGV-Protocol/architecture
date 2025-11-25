@@ -4,38 +4,13 @@ import { ScrollAnimation } from '@/components/ScrollAnimation';
 import { SectionWrapper } from '@/components/ui/SectionWrapper';
 import { Box } from '@/components/ui/Box';
 import { Clock, Shield, Eye, TrendingUp, Building, FileText, Network } from 'lucide-react';
+import { useTranslations } from '@/lib/translation-provider';
 
 export function BuiltForNextSection() {
-  const items = [
-    {
-      icon: Clock,
-      text: 'Faster audits'
-    },
-    {
-      icon: Shield,
-      text: 'Lower security risk'
-    },
-    {
-      icon: Eye,
-      text: 'Transparent supply'
-    },
-    {
-      icon: TrendingUp,
-      text: 'Predictable token behaviour'
-    },
-    {
-      icon: Building,
-      text: 'Exchange-friendly'
-    },
-    {
-      icon: FileText,
-      text: 'Clean documentation'
-    },
-    {
-      icon: Network,
-      text: 'Foundation for multichain expansion later'
-    }
-  ];
+  const { t } = useTranslations('builtForNext');
+  const iconComponents = [Clock, Shield, Eye, TrendingUp, Building, FileText, Network];
+  const labels = Array.from({ length: iconComponents.length }, (_, index) => t(`items.${index}`));
+  const items = iconComponents.map((icon, index) => ({ icon, text: labels[index] }));
 
   return (
     <SectionWrapper
@@ -51,12 +26,12 @@ export function BuiltForNextSection() {
     >
       <div className="text-center mb-8 sm:mb-12">
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6 px-4">
-          AGV Token Architecture — Built for{' '}
-          <span className="text-blue-400 italic">What Comes Next</span>
+          {t('heading.prefix')}{' '}
+          <span className="text-blue-400 italic">{t('heading.highlight')}</span>
         </h2>
         
         <p className="text-base sm:text-lg md:text-xl text-white/90 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed px-4">
-          Your preGVT automatically transitions to GVT through a secure vesting contract at TGE.
+          {t('description')}
         </p>
       </div>
 

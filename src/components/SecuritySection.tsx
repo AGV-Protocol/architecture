@@ -1,8 +1,12 @@
 'use client';
 
 import { SectionWrapper } from '@/components/ui/SectionWrapper';
+import { useTranslations } from '@/lib/translation-provider';
 
 export function SecuritySection() {
+  const { t } = useTranslations('security');
+  const points = Array.from({ length: 6 }, (_, index) => t(`points.${index}`));
+
   return (
     <SectionWrapper
       glowEffect={{
@@ -17,38 +21,20 @@ export function SecuritySection() {
     >
       <div className="text-center mb-8 sm:mb-12">
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 sm:mb-8 px-4">
-          Security at the{' '}
-          <span className="text-blue-400 italic">Core of the System</span>
+          {t('heading.prefix')}{' '}
+          <span className="text-blue-400 italic">{t('heading.highlight')}</span>
         </h2>
       </div>
 
       {/* Mobile: Bullet List */}
       <div className="md:hidden max-w-2xl mx-auto mb-8 px-4">
         <ul className="space-y-3 text-left">
-          <li className="text-white text-base font-bold flex items-start">
-            <span className="text-blue-400 mr-3 shrink-0">•</span>
-            <span>Safe Multisig controls all minting</span>
-          </li>
-          <li className="text-white text-base font-bold flex items-start">
-            <span className="text-blue-400 mr-3 shrink-0">•</span>
-            <span>One chain = smaller attack surface</span>
-          </li>
-          <li className="text-white text-base font-bold flex items-start">
-            <span className="text-blue-400 mr-3 shrink-0">•</span>
-            <span>Escrow-based vesting enforcement</span>
-          </li>
-          <li className="text-white text-base font-bold flex items-start">
-            <span className="text-blue-400 mr-3 shrink-0">•</span>
-            <span>Non-upgradable contracts for stability</span>
-          </li>
-          <li className="text-white text-base font-bold flex items-start">
-            <span className="text-blue-400 mr-3 shrink-0">•</span>
-            <span>Pausable emergency functions</span>
-          </li>
-          <li className="text-white text-base font-bold flex items-start">
-            <span className="text-blue-400 mr-3 shrink-0">•</span>
-            <span>Optional timelock governance</span>
-          </li>
+          {points.map(point => (
+            <li key={point} className="text-white text-base font-bold flex items-start">
+              <span className="text-blue-400 mr-3 shrink-0">•</span>
+              <span>{point}</span>
+            </li>
+          ))}
         </ul>
       </div>
 
@@ -65,7 +51,7 @@ export function SecuritySection() {
         {/* Top Left - text1 */}
         <div className="absolute top-16 left-0 max-w-[220px]">
           <div className="relative">
-            <p className="text-white text-sm md:text-base font-bold text-right mb-2">Safe Multisig controls all minting</p>
+            <p className="text-white text-sm md:text-base font-bold text-right mb-2">{points[0]}</p>
           </div>
         </div>
 
@@ -73,7 +59,7 @@ export function SecuritySection() {
         <div className="absolute top-16 right-0 max-w-[220px]">
           <div className="relative">
             <p className="text-white text-sm md:text-base font-bold text-left mb-2">
-              One chain = smaller attack surface</p>
+              {points[1]}</p>
           </div>
         </div>
 
@@ -81,7 +67,7 @@ export function SecuritySection() {
         <div className="absolute bottom-32 left-0 max-w-[220px]">
           <div className="relative">
             <p className="text-white text-sm md:text-base font-bold text-right mt-2">
-              Escrow-based vesting enforcement
+              {points[2]}
             </p>
           </div>
         </div>
@@ -89,21 +75,21 @@ export function SecuritySection() {
         {/* Bottom Right - text4 */}
         <div className="absolute bottom-32 right-0 max-w-[220px]">
           <div className="relative">
-            <p className="text-white text-sm md:text-base font-bold text-left mt-2">Non-upgradable contracts for stability</p>
+            <p className="text-white text-sm md:text-base font-bold text-left mt-2">{points[3]}</p>
           </div>
         </div>
 
         {/* Bottom Center Left - text5 */}
         <div className="absolute bottom-[-90px] left-1/3 max-w-[200px] transform -translate-x-1/2">
           <div className="relative">
-            <p className="text-white text-sm md:text-base font-bold text-right mt-2">Pausable emergency functions</p>
+            <p className="text-white text-sm md:text-base font-bold text-right mt-2">{points[4]}</p>
           </div>
         </div>
 
         {/* Bottom Center Right - text6 */}
         <div className="absolute bottom-[-90px] right-1/3 max-w-[200px] transform translate-x-1/2">
           <div className="relative">
-            <p className="text-white text-sm md:text-base font-bold text-left mt-2">Optional timelock governance</p>
+            <p className="text-white text-sm md:text-base font-bold text-left mt-2">{points[5]}</p>
           </div>
         </div>
       </div>

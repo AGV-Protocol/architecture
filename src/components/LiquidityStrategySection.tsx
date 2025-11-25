@@ -1,8 +1,13 @@
 'use client';
 
 import { SectionWrapper } from '@/components/ui/SectionWrapper';
+import { useTranslations } from '@/lib/translation-provider';
 
 export function LiquidityStrategySection() {
+  const { t } = useTranslations('liquidity');
+  const phaseOneBullets = Array.from({ length: 2 }, (_, index) => t(`phase1.bullets.${index}`));
+  const phaseTwoBullets = Array.from({ length: 3 }, (_, index) => t(`phase2.bullets.${index}`));
+
   return (
     <SectionWrapper
       glowEffect={{
@@ -16,8 +21,8 @@ export function LiquidityStrategySection() {
     >
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8">
-          A Phased Liquidity Strategy for{' '}
-          <span className="text-blue-400">Clean Price Discovery</span>
+          {t('heading.prefix')}{' '}
+          <span className="text-blue-400">{t('heading.highlight')}</span>
         </h2>
       </div>
 
@@ -35,23 +40,21 @@ export function LiquidityStrategySection() {
               }}
             >
               <div className="text-white">
-                <h3 className="font-bold text-xl mb-1">Phase 1 — Pre-TGE</h3>
-                <p className="text-white/90">PreGVT–USDT LP on PancakeSwap.</p>
+                <h3 className="font-bold text-xl mb-1">{t('phase1.title')}</h3>
+                <p className="text-white/90">{t('phase1.description')}</p>
               </div>
             </div>
             
             {/* Purpose section below */}
             <div className="mt-8 pl-6">
-              <h4 className="text-white font-bold text-lg mb-3">Purpose</h4>
+              <h4 className="text-white font-bold text-lg mb-3">{t('phase1.purposeTitle')}</h4>
               <ul className="space-y-2">
-                <li className="text-white/90 flex items-start">
-                  <span className="text-blue-400 mr-2">•</span>
-                  <span>Price reference</span>
-                </li>
-                <li className="text-white/90 flex items-start">
-                  <span className="text-blue-400 mr-2">•</span>
-                  <span>Wallet + dashboard visibility</span>
-                </li>
+                {phaseOneBullets.map(bullet => (
+                  <li key={bullet} className="text-white/90 flex items-start">
+                    <span className="text-blue-400 mr-2">•</span>
+                    <span>{bullet}</span>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -76,27 +79,21 @@ export function LiquidityStrategySection() {
               }}
             >
               <div className="text-white pl-6">
-                <h3 className="font-bold text-xl mb-1">Phase 2 — TGE</h3>
-                <p className="text-white/90">GVT liquidity goes live.</p>
+                <h3 className="font-bold text-xl mb-1">{t('phase2.title')}</h3>
+                <p className="text-white/90">{t('phase2.description')}</p>
               </div>
             </div>
             
             {/* Includes section below */}
             <div className="mt-8 pl-12">
-              <h4 className="text-white font-bold text-lg mb-3">Includes</h4>
+              <h4 className="text-white font-bold text-lg mb-3">{t('phase2.purposeTitle')}</h4>
               <ul className="space-y-2">
-                <li className="text-white/90 flex items-start">
-                  <span className="text-yellow-400 mr-2">•</span>
-                  <span>Market-maker support</span>
-                </li>
-                <li className="text-white/90 flex items-start">
-                  <span className="text-yellow-400 mr-2">•</span>
-                  <span>Full conversion from preGVT → GVT</span>
-                </li>
-                <li className="text-white/90 flex items-start">
-                  <span className="text-yellow-400 mr-2">•</span>
-                  <span>On-chain circulating supply disclosure</span>
-                </li>
+                {phaseTwoBullets.map(bullet => (
+                  <li key={bullet} className="text-white/90 flex items-start">
+                    <span className="text-yellow-400 mr-2">•</span>
+                    <span>{bullet}</span>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -116,17 +113,15 @@ export function LiquidityStrategySection() {
             }}
           >
             <div className="text-center text-white mb-4">
-              <h3 className="font-bold text-xl mb-2">Phase 1 — Pre-TGE</h3>
-              <p className="text-white/90 mb-4">PreGVT–USDT LP on PancakeSwap.</p>
+              <h3 className="font-bold text-xl mb-2">{t('phase1.title')}</h3>
+              <p className="text-white/90 mb-4">{t('phase1.description')}</p>
               <ul className="space-y-2 text-left max-w-xs mx-auto">
-                <li className="flex items-start">
-                  <span className="mr-2">•</span>
-                  <span>Price reference</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2">•</span>
-                  <span>Wallet + dashboard visibility</span>
-                </li>
+                {phaseOneBullets.map(bullet => (
+                  <li key={bullet} className="flex items-start">
+                    <span className="mr-2">•</span>
+                    <span>{bullet}</span>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -149,21 +144,15 @@ export function LiquidityStrategySection() {
             }}
           >
             <div className="text-center text-white pt-4">
-              <h3 className="font-bold text-xl mb-2">Phase 2 — TGE</h3>
-              <p className="text-white/90 mb-4">GVT liquidity goes live.</p>
+              <h3 className="font-bold text-xl mb-2">{t('phase2.title')}</h3>
+              <p className="text-white/90 mb-4">{t('phase2.description')}</p>
               <ul className="space-y-2 text-left max-w-xs mx-auto">
-                <li className="flex items-start">
-                  <span className="mr-2">•</span>
-                  <span>Market-maker support</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2">•</span>
-                  <span>Full conversion from preGVT → GVT</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2">•</span>
-                  <span>On-chain circulating supply disclosure</span>
-                </li>
+                {phaseTwoBullets.map(bullet => (
+                  <li key={bullet} className="flex items-start">
+                    <span className="mr-2">•</span>
+                    <span>{bullet}</span>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
