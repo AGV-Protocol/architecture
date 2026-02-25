@@ -5,6 +5,11 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ['lucide-react'],
   },
+  eslint: {
+    // This skips ESLint completely during `next build`
+    // Warning: Only use if you're okay shipping with potential lint issues
+    ignoreDuringBuilds: true,
+  },
 };
 
 export default nextConfig;

@@ -38,7 +38,7 @@ export function HeroSection() {
               >
                 {t('secondaryCta')}
               </a>
-            </div>
+            </div>f
             
             {/* Token Icons with Animated Arrow */}
             <div className="mb-6 sm:mb-8 flex items-center justify-center gap-4 sm:gap-6 md:gap-8 px-2">
